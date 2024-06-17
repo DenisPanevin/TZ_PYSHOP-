@@ -1,3 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+const PROBABILITY_GOAL = 0.0001
+const PROBABILITY_FIRST_TEAM_GOAL = 0.55
+const STAMPS_NUMBER = 50000
+
+type Score struct {
+	Home int
+	Away int
+}
+
+type ScoreStamp struct {
+	Offset int
+	Score  Score
+}
+
+
 func fillScores() *[]ScoreStamp {
 	random := rand.New(rand.NewSource(time.Now().UnixNano()))
 
